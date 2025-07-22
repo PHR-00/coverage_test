@@ -27,10 +27,10 @@ def main():
     report_path = os.path.join("htmlcov", "index.html")
     if os.path.exists(report_path):
         print(f"\n HTML report generated at: {report_path}")
-        # try:
-        #     webbrowser.open(f"file://{os.path.realpath(report_path)}")
-        # except webbrowser.Error:
-        #     print("Could not open web browser. Please open the file manually.")
+        try:
+            webbrowser.open(f"file://{os.path.realpath(report_path)}")
+        except webbrowser.Error:
+            print("Could not open web browser. Please open the file manually.")
     else:
         print("\n Could not generate HTML report because no coverage data was collected.")
 
