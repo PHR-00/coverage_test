@@ -30,8 +30,8 @@ jobs:
           coverage run -m pytest
       - name: Generate coverage report and check threshold
         run: |
+          coverage html
           coverage report -m --fail-under=80
-        #   coverage html
 
       - name: Upload HTML coverage report as artifact
         if: always()
