@@ -1,0 +1,31 @@
+# .coveragerc
+
+[run]
+# branch = True 开启分支覆盖率检测
+branch = True
+# source 指定要检测哪些代码。这里我们指向 src 文件夹。
+# 你可以在这里添加或删除模块/包。
+source =
+    src.complex_module
+    src.calculator
+    src.greeter
+
+# omit 指定要从检测中排除哪些文件。
+# 非常适合排除配置文件、测试代码或不关心的工具脚本。
+omit =
+    src/utils.py
+    */__init__.py
+    tests/*
+
+[report]
+# 在命令行报告中显示缺失的行号
+show_missing = True
+# 不排除覆盖率为 100% 的文件，所有文件都看
+skip_covered = False
+# 排序方式，按未覆盖行数倒序
+sort = Miss
+
+[html]
+# 指定 HTML 报告输出的文件夹
+directory = htmlcov
+skip_covered = False
