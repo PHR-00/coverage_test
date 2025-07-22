@@ -25,10 +25,12 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run coverage and generate report
+      - name: Run test with coverage 
         run: |
           coverage run -m pytest
-          coverage report -m
+      - name: Generate coverage report and check threshold
+        run: |
+          coverage report -m --fail-under=80
           coverage html
 
       - name: Upload HTML coverage report as artifact
